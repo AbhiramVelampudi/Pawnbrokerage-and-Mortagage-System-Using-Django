@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sdp.css' %}">
+    <title>Pawnshop Mortgage</title>
+    <style>
+      nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 999; /* add this line */
+}
+
+label.theme {
+  font-size: 50%;
+  align-self: center;
+}
+
+
+button {
+  text-decoration: none;
+  position: absolute;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #fff;
+  width: 9em;
+  height: 3em;
+  line-height: 2em;
+  text-align: center;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 300%;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+button:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+button:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 35px;
+  transition: 1s;
+}
+
+button:hover::before {
+  filter: blur(20px);
+}
+
+button:active {
+  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  background-color: #252525;
+  color: #fff;
+}
+
+[data-theme="dark"] button {
+  background: linear-gradient(90deg, #f441a5, #ffeb3b, #03a9f4, #f441a5);
+}
+
+[data-theme="dark"] button:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+[data-theme="dark"] button:before {
+  background: linear-gradient(90deg, #f441a5, #ffeb3b, #03a9f4, #f441a5);
+}
+
+[data-theme="dark"] h1 {
+  color: #fff;
+}
+
+[data-theme="dark"] input {
+  color: #fff;
+}
+
+[data-theme="dark"] label {
+  color: #fff;
+}
+    </style>
+  </head>
+  <body>
+  <nav>
+  <ul style="display: flex; justify-content: space-between; align-items: center;">
+    <li><a href="#"><img src="{% static 'images/clogo.png' %}" alt="Logo" style="width: 50px; height: 50px; border-radius: 50%;"></a></li>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'registration' %}">gf</a></li>
+    <li><a href="{% url 'userlogin' %}">Login</a></li>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <li style="margin-left: auto;">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}">
+<label for="theme" class="theme">
+  <span class="theme__toggle-wrap">
+    <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark" style="font-size: inherit;">
+    <span class="theme__fill"></span>
+    <span class="theme__icon">
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+    </span>
+  </span>
+</label>
+
+<script>
+const themeToggle = document.getElementById('theme');
+const button = document.querySelector('button');
+
+themeToggle.addEventListener('change', () => {
+  if (themeToggle.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    button.style.zIndex = 1;
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    button.style.zIndex = 'auto';
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target !== themeToggle) {
+    themeToggle.checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    button.style.zIndex = 'auto';
+  }
+});
+</script>
+
+
+    </li>
+  </ul>
+</nav>
+
+
+
+    <h1>Welcome to Pawnshop Mortgage</h1>
+
+    <div id="login">
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button> LOGIN</button>
+        <style>
+
+          button {
+ text-decoration: none;
+ position: absolute;
+ border: none;
+ font-size: 14px;
+ font-family: inherit;
+ color: #fff;
+ width: 9em;
+ height: 3em;
+ line-height: 2em;
+ text-align: center;
+ background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+ background-size: 300%;
+ border-radius: 30px;
+ z-index: 1;
+}
+
+button:hover {
+ animation: ani 8s linear infinite;
+ border: none;
+}
+
+@keyframes ani {
+ 0% {
+  background-position: 0%;
+ }
+
+ 100% {
+  background-position: 400%;
+ }
+}
+
+button:before {
+ content: '';
+ position: absolute;
+ top: -5px;
+ left: -5px;
+ right: -5px;
+ bottom: -5px;
+ z-index: -1;
+ background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+ background-size: 400%;
+ border-radius: 35px;
+ transition: 1s;
+}
+
+button:hover::before {
+ filter: blur(20px);
+}
+
+button:active {
+ background: linear-gradient(32deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+}
+        </style>
+      </form>
+    </div>
+
+    <script>
+      const users = [
+        { username: 'user1', password: 'password1', role: 'user' },
+        { username: 'admin1', password: 'password2', role: 'admin' },
+        { username: 'pawnbroker1', password: 'password3', role: 'pawnbroker' }
+      ];
+
+      const loginForm = document.querySelector('#login form');
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const username = loginForm.username.value;
+        const password = loginForm.password.value;
+
+        const user = users.find((user) => {
+          return user.username === username && user.password === password;
+        });
+
+        if (user) {
+          switch (user.role) {
+            case 'user':
+              window.location.href = 'user';
+              break;
+            case 'admin':
+              window.location.href = 'admin';
+              break;
+            case 'pawnbroker':
+              window.location.href = 'pawnbroker';
+              break;
+          }
+        } else {
+          alert('Invalid username or password');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+
+<h3 align="center">Django with Form Handling, MVT, Template Inheritance, Session, Cookies, Email, ModelForms</h3>
+<hr color="black"><hr color="black">
+<br>
+
+
+
+
+<br><br><br><br>
+
+{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+</body>
+</html>

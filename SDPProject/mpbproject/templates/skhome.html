@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+{% load static %}
+<html data-theme="light">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sdp.css' %}">
+    <title>About Us | Pawn Brokerage and Mortgage Business System</title>
+    <style>
+    [data-theme="dark"] {
+  --text-color: #f5f5f5;
+  --background-color: #1c1c1c;
+}
+
+[data-theme="dark"] body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+[data-theme="dark"] a {
+  color: var(--text-color);
+}
+    nav {
+  display: flex;
+  justify-content: space-between;
+}
+ header {
+    text-align: center;
+  }
+  h1 {
+    font-size: 36px;
+  }
+
+label.theme {
+  font-size: 50%;
+  align-self: center;
+}
+
+.center {
+  margin: auto;
+  display: block;
+}
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+      /* CSS for the interest calculator */
+          .card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 450px;
+  margin: 20px auto;
+  box-shadow: 0px 0px 10px 5px rgba(150,150,150,150.150);
+}
+
+.calculator {
+  /* Remove the 'margin' property */
+  /* Add 'margin: 0 auto' to center the element */
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+      .calculator h3 {
+        text-align: center;
+      }
+
+      .calculator form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .calculator label {
+        font-weight: bold;
+      }
+
+      .calculator input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        margin-bottom: 16px;
+      }
+
+      .calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .calculator button:hover {
+        background-color: #45a049;
+      }
+
+    </style>
+  </head>
+  <body>
+   <nav>
+  <ul style="display: flex; justify-content: space-between; align-items: center;">
+    <li><a href="#"><img src="{% static 'images/clogo.png' %}" alt="Logo" style="width: 50px; height: 50px; border-radius: 50%;"></a></li>
+    <li><a href="{% url 'skhome' %}">Home</a></li>
+    <li><a href="#">Registration</a></li>
+    <li><a href="{% url 'sdphome' %}">Login</a></li>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <li style="margin-left: auto;">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}">
+<label for="theme" class="theme">
+  <span class="theme__toggle-wrap">
+    <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark" style="font-size: inherit;">
+    <span class="theme__fill"></span>
+    <span class="theme__icon">
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+    </span>
+  </span>
+</label>
+
+<script>
+const themeToggle = document.getElementById('theme');
+const button = document.querySelector('button');
+
+themeToggle.addEventListener('change', () => {
+  if (themeToggle.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    button.style.zIndex = 1;
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    button.style.zIndex = 'auto';
+  }
+});
+
+
+</script>
+
+
+    </li>
+  </ul>
+</nav>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    main {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    ul {
+      text-align: left;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    li:before {
+      text-align: left;
+      content: "\2022";
+      color: #333;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    #gallerywrapper {
+     width:640px;
+     height:450px;
+     margin:0 auto;
+     position:relative;
+     font-family:verdana, arial, sans-serif;
+ }
+
+ #gallerywrapper #gallery {
+     position:absolute;
+     left:0;
+     top:0;
+     height:450px;
+     width:640px;
+     overflow:hidden;
+     text-align:center;
+ }
+
+ #gallerywrapper #gallery div {
+     width:640px; height:900px;
+     padding-top:10px;
+     position:relative;
+ }
+
+ #gallerywrapper #gallery div img {
+     clear:both;
+     display:block;
+     margin:0 auto;
+     border:0;
+ }
+
+ #gallerywrapper #gallery div h3 {
+     padding:10px 0 0 0;
+     margin:0;
+     font-size:18px;
+ }
+
+ #gallerywrapper #gallery div p {
+     padding:5px 0;
+     margin:0;
+     font-size:12px;
+     line-height:18px;
+ }
+
+ #gallery .previous{
+     display:inline;
+     float:left;
+     margin-left:80px;
+     text-decoration:none;
+ }
+
+ #gallery .next{
+     display:inline;
+     float:right;
+     margin-right:80px;
+     text-decoration:none;
+ }
+   .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  </style>
+    <!-- Header with image and text -->
+  <h1>Pawn Brokerage and Mortgage Business System</h1>
+<!-- Main content section visible to Pawnbrokers -->
+<main>
+  <h2>About Us</h2>
+  <p>As a leading pawn brokerage and mortgage business system, we have been providing expert financial services to our clients for over 10 years. Our team of knowledgeable professionals is dedicated to helping you meet your financial needs by offering a range of services, including pawn loans, mortgage loans, and more.</p>
+  <div id="gallerywrapper">
+	    <div id="gallery">
+		    <div id="pic1">
+			    <img src="{% static 'images/loan.png' %}" alt="img4" style="width:100%">
+			    <a class="previous" href="#pic5">&lt;</a>
+			    <a class="next" href="#pic2">&gt;</a>
+			    <p>Pawn loans</p>
+		    </div>
+		    <div id="pic2">
+			    <img src="{% static 'images/mloan.png' %}" alt="img4" style="width:100%">
+			    <a class="previous" href="#pic1">&lt;</a>
+			    <a class="next" href="#pic3">&gt;</a>
+			    <p>Mortgage loans</p>
+		    </div>
+		    <div id="pic3">
+			    <img src="{% static 'images/mnloan.png' %}" alt="img4" style="width:100%">
+			    <a class="previous" href="#pic2">&lt;</a>
+			    <a class="next" href="#pic1">&gt;</a>
+			    <p>Flexible repayment options and Competitive interest rates</p>
+		    </div>
+<!--		    <div id="pic4">-->
+<!--			    <img src="https://unsplash.it/g/500/350" height="350" width="500" alt="Image 4">-->
+<!--			    <a class="previous" href="#pic3">&lt;</a>-->
+<!--			    <a class="next" href="#pic5">&gt;</a>-->
+<!--			    <h3>Image 4</h3>-->
+<!--			    <p>Text of image 4.</p>-->
+<!--		    </div>-->
+<!--		    <div id="pic5">-->
+<!--			    <img src="https://unsplash.it/g/500/350?random" height="350" width="500" alt="Image 5">-->
+<!--			    <a class="previous" href="#pic4">&lt;</a>-->
+<!--			    <a class="next" href="#pic1">&gt;</a>-->
+<!--			    <h3>Image 5</h3>-->
+<!--			    <p>Text of image 5.</p>-->
+<!--		    </div>-->
+	    </div>
+	</div>
+  <h2>Our Services</h2>
+  <p>At Pawn Brokerage and Mortgage Business System, we offer a wide range of financial services tailored to meet your specific needs. Whether you need a quick loan or a long-term mortgage, we have the expertise and experience to help you succeed. Our services include:</p>
+  <ul>
+    <li>Pawn loans</li>
+    <li>Mortgage loans</li>
+    <li>Flexible repayment options</li>
+    <li>Competitive interest rates</li>
+    <li>And more</li>
+  </ul>
+     <!-- Interest calculator section -->
+   <div class="container" style="width: 400px; margin: 0 auto;">
+    <div class="card">
+  <div class="calculator">
+  <h2>Interest Calculator</h2>
+  <label for="principal">Principal Amount (₹):</label>
+  <input type="number" id="principal" name="principal" placeholder="Enter principal amount">
+
+  <label for="interest">Interest Rate (%):</label>
+  <input type="number" id="interest" name="interest" placeholder="Enter interest rate">
+
+  <label for="tenure">Tenure (months):</label>
+  <input type="number" id="tenure" name="tenure" placeholder="Enter tenure in months">
+
+  <button type="button" onclick="calculate()">Calculate Interest</button>
+
+  <p>The interest amount is: <span id="interest-amount"></span>₹</p>
+</div>
+</div>
+   </div>
+  <h2>Why Choose Us</h2>
+  <p>There are many reasons to choose Pawn Brokerage and Mortgage Business System for your financial needs, including:</p>
+  <ul>
+    <li>Expertise and experience in the industry</li>
+    <li>Personalized service tailored to your needs</li>
+    <li>Friendly and knowledgeable staff</li>
+    <li>Flexible repayment options</li>
+    <li>Competitive interest rates</li>
+  </ul>
+</main>
+
+
+
+
+    <!-- Footer with contact information -->
+<div class="marquee">
+  <p>Contact Us : 123 Main Street, Anytown USA ::: Phone: 555-1234 ::: Email: info@pawnbrokerage.com</p>
+</div>
+
+
+    <!-- JavaScript for the interest calculator -->
+  <script>
+  function calculate() {
+    const principal = document.getElementById("principal").value;
+    const interestRate = document.getElementById("interest").value / 100;
+    const tenure = document.getElementById("tenure").value;
+    const interestAmount = (principal * interestRate * tenure) / 12;
+
+    document.getElementById("interest-amount").textContent = interestAmount.toFixed(2);
+  }
+</script>
+   </div>
+  </body>
+</html>
+

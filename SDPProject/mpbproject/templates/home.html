@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+{% load static %}
+<html data-theme="light">
+<head>
+  <link rel="icon" type="images/png" href="{% static 'images/clogo.png' %}" />
+  <title>AHR</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/sdp.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ [data-theme="dark"] {
+  --text-color: #f5f5f5;
+  --background-color: #1c1c1c;
+}
+
+[data-theme="dark"] body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+[data-theme="dark"] a {
+  color: var(--text-color);
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #080710;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+label.theme {
+  font-size: 50%;
+  align-self: center;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 1px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<nav>
+<ul style="display: flex; justify-content: space-between; align-items: center;">
+    <li><a href="#"><img src="{% static 'images/clogo.png' %}" alt="Logo" style="width: 50px; height: 50px; border-radius: 50%;"></a></li>
+    <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'pawnbroker' %}">Pawnbroker</a></li>
+    <li><a href="{% url 'registration' %}">Registration</a></li>
+    <li><a href="{% url 'userlogin' %}">Login</a></li>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <li style="margin-left: auto;">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}">
+<label for="theme" class="theme">
+  <span class="theme__toggle-wrap">
+    <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark" style="font-size: inherit;">
+    <span class="theme__fill"></span>
+    <span class="theme__icon">
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+      <span class="theme__icon-part"></span>
+    </span>
+  </span>
+</label>
+
+<script>
+const themeToggle = document.getElementById('theme');
+const button = document.querySelector('button');
+
+themeToggle.addEventListener('change', () => {
+  if (themeToggle.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    button.style.zIndex = 1;
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    button.style.zIndex = 'auto';
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target !== themeToggle) {
+    themeToggle.checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    button.style.zIndex = 'auto';
+  }
+});
+</script>
+
+
+    </li>
+  </ul>
+</nav>
+
+<div class="about-section">
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <h1>PAWNBROKER AGE AND MORTAGAGE BUSSINESS SYSTEM</h1>
+  <p>Efficiently Manage Your Pawnbroker Business with Confidence and Ease.</p>
+</div>
+
+<h2 style="text-align:center">HOME</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/20.png' %}" alt="img4" style="width:100%">
+      <div class="container">
+        <h2>Gain Valuable Insights with Advanced Reporting and Analytics</h2>
+        <p>Find out how our software's reporting and analytics tools can help you make data-driven decisions to optimize your business. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/21.png' %}" alt="img4" style="width:100%">
+      <div class="container">
+        <h2>Streamline Your Operations with Our Pawnbroker and Mortgage Business Software</h2>
+        <p>Discover how our software can simplify your day-to-day operations . </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/22.png' %}" alt="img4" style="width:100%">
+      <div class="container">
+        <h2>Powerful Features to Manage Your Pawnbroker and Mortgage Transactions</h2>
+        <p>Learn about the robust features our software offers to help you track inventory, process loans, manage payments, and more.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/23.png' %}" alt="img4" style="width:100%">
+      <div class="container">
+        <h2>Securely Store Customer Data and Transactions</h2>
+        <p>See how our software prioritizes data security to protect your business and your customers' information.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/24.png' %}" alt="img4" style="width:100%">
+      <div class="container">
+        <h2>User-Friendly Interface for Easy Navigation and Management</h2>
+        <p>Explore our software's intuitive design that simplifies the management of your business, even for non-technical users. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/25.png' %}" alt="img4" style="width:100%">
+      <div class="container">
+        <h2>Exceptional Support and Training for Your Team</h2>
+
+        <p>Experience our customer-centric approach, including comprehensive training and support to ensure your team can fully utilize the software's capabilities. </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

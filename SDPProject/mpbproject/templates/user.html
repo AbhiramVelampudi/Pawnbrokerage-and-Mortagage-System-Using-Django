@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+{% load static %}
+<html data-theme="light">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sdp.css' %}">
+    <title>About Us | Pawn Brokerage and Mortgage Business System</title>
+    <style>
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #080710;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+body {
+  background: url('{% static "images/Lizard.png" %}') no-repeat center center fixed;
+}
+ .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Main */
+main {
+  padding: 40px 0;
+}
+
+.intro {
+  background-color: #f2f2f2;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.services {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+
+/* About */
+.about {
+  padding: 40px 0;
+  text-align: justify;
+}
+
+.about h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.card1 {
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.card-title1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-control1 {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  margin-top: 20px;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.result {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+    </style>
+  </head>
+  <body>
+<nav>
+  <ul style="display: flex; justify-content: space-between; align-items: center;">
+    <li><a href="#"><img src="{% static 'images/clogo.png' %}" alt="Logo" style="width: 50px; height: 50px; border-radius: 50%;"></a></li>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'pawnbroker' %}">Pawnbroker</a></li>
+    <li><a href="{% url 'registration' %}">Registration</a></li>
+    <li><a href="{% url 'userlogin' %}">Login</a></li>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <li ><form method="post" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-link">Logout</button>
+    </form></li>
+  </ul>
+</nav>
+<header>
+        <div class="container">
+            <h1>Pawnbrokerage System</h1>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+
+                <h2>Welcome to Our Pawnbrokerage System</h2>
+                <p>We offer a variety of pawn services including loans, sales, and purchases of high-quality items.Pawnbrokers are businesses that provide short-term loans to individuals in exchange for valuable items that are held as collateral. Pawnbrokers also buy and sell items such as jewelry, watches, electronics, musical instruments, and other valuable goods.
+
+                  The loan amount provided by pawnbrokers is based on the appraised value of the item, and the loan term is usually between 30 and 90 days. If the borrower is unable to repay the loan and interest within the loan term, the pawnbroker can keep the item and sell it to recover their money.</p>
+
+        </section>
+        <section class="services">
+                <h2>Our Services</h2>
+                <div class="card-container">
+                  <div class="card">
+                    <img src="t1.jpg" alt="Card Image">
+                    <h3>Card 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div class="card">
+                    <img src="https://via.placeholder.com/350x200" alt="Card Image">
+                    <h3>Card 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div class="card">
+                    <img src="https://via.placeholder.com/350x200" alt="Card Image">
+                    <h3>Card 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+                  </div>
+            </div>
+              <h2>Information</h2>
+              <p>The pawnbroker age system is a method used to determine the age of an item. It is based on the assumption that the quality of workmanship and materials used in an item decreases over time, and that the item's age can be estimated by comparing it to similar items of known age and quality.Pawnbrokers are regulated by local and national laws, and they must follow strict guidelines regarding loan amounts, interest rates, and fees. Most pawnbrokers also have security measures in place to protect the items they hold as collateral.
+
+                In addition to providing short-term loans, many pawnbrokers also offer other services such as check cashing, money transfers, and the sale of pre-owned merchandise. Pawnbrokers can be a good option for individuals who need cash quickly and are unable to obtain a traditional bank loan.</p>
+              <div class="container">
+              <img src="t1.jpg" alt="hello" class="image" width="200" height="200">
+              </div>
+              <div class="card1">
+                <div class="card-body1">
+                  <h5 class="card-title1">Interest Finder Calculator</h5>
+                  <form>
+                    <div class="form-group1">
+                      <label for="loan-amount">Loan amount:</label>
+                      <input type="text" class="form-control" id="loan-amount" name="loan-amount" placeholder="Enter loan amount">
+                    </div>
+                    <div class="form-group1">
+                      <label for="interest-rate">Interest rate:</label>
+                      <input type="text" class="form-control" id="interest-rate" name="interest-rate" placeholder="Enter interest rate">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="calculateInterest()">Calculate Interest</button>
+                    <div class="result mt-3" id="result"></div>
+                  </form>
+                </div>
+              </div>
+
+            <script>
+              function calculateInterest() {
+                var loanAmount = document.getElementById("loan-amount").value;
+                var interestRate = document.getElementById("interest-rate").value;
+                var interest = (loanAmount * interestRate*12) / 100;
+                document.getElementById("result").innerHTML = "Interest: ₹" + interest.toFixed(2);
+              }
+            </script>
+        </section>
+        <section class="heoo">
+          <h2>About Us</h2>
+        </section>
+        <section class="about">
+                <p>We have been in business for over 10 years and have served thousands of satisfied customers. Our experienced staff is knowledgeable about a wide variety of items and can help you get the most out of your pawn experience.At Pawnbrokerage, we are passionate about providing Loans that our customers can rely on. We have been in business for 6 years and are committed to delivering exceptional quality and service to our customers.Our team is made up of experienced professionals who are dedicated to their work and take pride in what they do.
+                   We work hard to ensure that our customers are satisfied with every aspect of their experience with us, from the initial consultation to the final delivery of their product/service.At Pawnbrokerage, we believe in treating our customers with respect and honesty. We are committed to building lasting relationships with our customers and providing them with the support they need to achieve their goals.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Pawnbrokerage System</p>
+        </div>
+    </footer>
+  </body>
+</html>
+

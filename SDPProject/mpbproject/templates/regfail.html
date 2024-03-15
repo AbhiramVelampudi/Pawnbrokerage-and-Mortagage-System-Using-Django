@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="icon" type="images/png" href="{% static 'images/clogo.png' %}" />
+  <title>AHR</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/regfail.css' %}">
+    <meta charset="UTF-8">
+    <h1 style="color:white">REGISTRATION FAILED (INVALID CREDENTIALS)</h1>
+</head>
+<body>
+
+    &emsp;&emsp;&emsp;&emsp;
+    <div class="wrap">
+        <button class="button" onclick="redirectToRegistration()">Try Again</button>
+    </div>
+
+    <script>
+        function redirectToRegistration() {
+            window.location.href = "registration";
+        }
+    </script>
+</body>
+</html>

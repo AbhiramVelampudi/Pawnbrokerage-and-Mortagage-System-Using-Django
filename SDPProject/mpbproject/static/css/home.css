@@ -1,0 +1,38 @@
+#services {
+  background-color: #f8f8f8;
+  padding: 80px 0;
+}
+
+.services-content {
+  margin-bottom: 60px;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.services-content img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.services-content h3 {
+  margin-bottom: 20px;
+}
+
+.services-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+.marquee {
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 0;
+  text-align: center;
+}

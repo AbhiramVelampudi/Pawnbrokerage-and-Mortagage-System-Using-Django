@@ -1,0 +1,86 @@
+/* Set default font styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Style the container */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+/* Style the form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the form inputs and button */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+select {
+  height: 40px;
+}
+
+textarea {
+  height: 120px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style the form headings */
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Set media queries for responsive design */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    border: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
